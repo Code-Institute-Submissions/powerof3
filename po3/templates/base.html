@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>kiwiilab</title>
+<title>Power of 3</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -64,6 +64,10 @@
                     <button type="button" id="sidebarCollapse" class="btn">
                         <i class="las la-bars"></i>
                     </button>
+                </div>
+            </nav>
+
+            {% block content %}
                     <!-- <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
@@ -77,8 +81,7 @@
                             </li>
                         </ul>
                     </div>  -->
-                </div>
-            </nav>
+            {% endblock %}
 
             
         </div>

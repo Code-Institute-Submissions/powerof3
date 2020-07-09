@@ -7,6 +7,7 @@
     --mainPink: #D14398;
     --mainFont: 'Roboto';
     --mainWhite: #FAFAFA;
+    --mainFont: 'Ubuntu';
     --secondFont: 'Arial';
 
 }
@@ -134,7 +135,7 @@ a[data-toggle="collapse"] {
 }
 
 /***********************************
-*** MEDIAQUERIES ********************
+*** MEDIAQUERIES *******************
 ***********************************/
 
 @media (max-width: 768px) {
@@ -148,3 +149,4 @@ a[data-toggle="collapse"] {
         display: none;
     }
 }
+
