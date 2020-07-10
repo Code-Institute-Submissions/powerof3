@@ -8,6 +8,7 @@ def load_user(user_id):
     return User.query.get(user_id) #Getting id from db
 
 class User(db.Model,UserMixin):
+
     __tablename__ = 'users'
 
     # User Authentication fields
@@ -20,6 +21,7 @@ class User(db.Model,UserMixin):
     first_name = db.Column(db.String(64),nullable=False)
     last_name = db.Column(db.String(64),nullable=False)
     profile_image = db.Column(db.String(128,nullable=False,default='default.svg'))
+    short_story = db.Column(db.Text(),nullable=False)
 
     # Relations
     recipes = db.relationship('Recipe',backref='chef',lazy=True)
