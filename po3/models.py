@@ -50,15 +50,17 @@ class Recipe(db.Model):
     ingriedient1 = db.Column(db.String(16),nullable=False)
     ingriedient2 = db.Column(db.String(16),nullable=False)
     ingriedient3 = db.Column(db.String(16),nullable=False)
+    smoothie_image = db.Column(db.String(128),nullable=False)
     ingriedient_image_1 = db.Column(db.String(128),nullable=False)
     ingriedient_image_2 = db.Column(db.String(128),nullable=False)
     ingriedient_image_3 = db.Column(db.String(128),nullable=False)
 
-    def __init__(self,title,description,ingriedient1,
+    def __init__(self,title,description,smoothie_image,ingriedient1,
     ingriedient2,ingriedient3,ingriedient_image_1,
     ingriedient_image_2,ingriedient_image_3,user_id):
         self.title = title
         self.description = description
+        self.smoothie_image = smoothie_image
         self.ingriedient1 = ingriedient1
         self.ingriedient2 = ingriedient2
         self.ingriedient3 = ingriedient3
