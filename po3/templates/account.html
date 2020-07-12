@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static',filename='profile_pics/'+current_user.profile_image)}}" class="card-img-top" alt="profile_picture">
+            <div class="card-body">
+              <h5 class="card-title">{{current_user.first_name}} {{current_user.last_name}}</h5>
+              <p class="card-text">{{current_user.short_story}}</p>
+              <form method="POST">
+                  {{form.hidden_tag()}}
+                  {{form.username.label}}{{form.username}}
+                  {{form.first_name.label}}{{form.first_name}}
+                  {{form.last_name.label}}{{form.last_name}}
+                  {{form.email.label}}{{form.email}}
+                  {{form.submit()}}
+              </form>
+            </div>
+          </div>
+    </div>
+
+{% endblock %}
