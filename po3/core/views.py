@@ -10,3 +10,7 @@ def index():
 @core.route('/about')
 def about():
     return render_template('about.html')
+
+@core.route('/contact')
+def contact():
+    return render_template('contact.html')

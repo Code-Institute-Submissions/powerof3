@@ -1,5 +1,5 @@
-from po3 import db,login_manager
-from flask.ext.bcrypt import Bcrypt,check_password_hash
+from po3 import db,login_manager,bcrypt
+from flask_bcrypt import Bcrypt,check_password_hash
 from flask_login import UserMixin
 from datetime import datetime
 
@@ -20,13 +20,15 @@ class User(db.Model,UserMixin):
     # User fields
     first_name = db.Column(db.String(64),nullable=False)
     last_name = db.Column(db.String(64),nullable=False)
-    profile_image = db.Column(db.String(128,nullable=False,default='default.svg'))
-    short_story = db.Column(db.Text(),nullable=False)
+    profile_image = db.Column(db.String(128),default='default.svg')
+    short_story = db.Column(db.Text(),default="This is my short story")
 
     # Relations
     recipes = db.relationship('Recipe',backref='chef',lazy=True)
 
-    def __init__(self,email,username,password_hash,first_name,last_name):
+    def __init__(self,first_name,last_name,email,username,password):
+        self.first_name = first_name
+        self.last_name = last_name
         self.email = email
         self.username = username
         self.password_hash = bcrypt.generate_password_hash(password)
