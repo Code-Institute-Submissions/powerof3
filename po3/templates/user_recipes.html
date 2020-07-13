@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+    <img src="{{url_for('static',filename='profile_pics/'+user.profile_image)}}" alt="profile_image" class="img-thumbnail">
+    <h1 class="display-4">{{user.username}}</h1>
+    <hr class="my-4">
+
+
+{% for recipe in recipe_cards.items %}
+    <h2><a href="{{url_for('recipe_cards.recipe_card',recipe_card_id=recipe.id)}}">{{recipe.title}}</a></h2>
+    Created By: <a href="url_for('users.recipe')">{{recipe.chef.username}}</a>
+    <p class="text-success">Published on: {{recipe.date.strftime("%Y-%m-%d")}}</p>
+    <br>
+    <p>{{description.text}}</p>
+    <br>
+{% endfor %}
+</div>
+
+<nav aria-label="Page Navigation">
+    <ul class="pagination justify-content-center">
+        {% for page_number in recipe_cards.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=3) %}
+            {% if recipe_card.page == page_num %}
+            <li class="page-item disabled">
+                <a class="page-link" href="{{url_for('users.user_recipes',username=user.username,page=page_num)}}">{{page_num}}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
