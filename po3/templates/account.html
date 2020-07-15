@@ -8,11 +8,22 @@
               <p class="card-text">{{current_user.short_story}}</p>
               <form method="POST">
                   {{form.hidden_tag()}}
+                  <div class="form-group">
                   {{form.username.label}}{{form.username}}
-                  {{form.first_name.label}}{{form.first_name}}
-                  {{form.last_name.label}}{{form.last_name}}
+                  </div>
+                  <div class="form-group">
+                    {{ form.profile_image.label(class="form-group") }}
+                    {{ form.profile_image(class="form-control-file") }}
+                  </div>
+                  <div class="form-group">
+                  {{form.short_story.label}}{{form.short_story}}
+                  </div>
+                  <div class="form-group">
                   {{form.email.label}}{{form.email}}
+                  </div>
+                  <button type="submit" class="btn btn-primary">
                   {{form.submit()}}
+                  </button>
               </form>
             </div>
           </div>
