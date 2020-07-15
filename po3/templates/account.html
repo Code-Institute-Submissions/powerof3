@@ -6,7 +6,7 @@
             <div class="card-body">
               <h5 class="card-title">{{current_user.first_name}} {{current_user.last_name}}</h5>
               <p class="card-text">{{current_user.short_story}}</p>
-              <form method="POST">
+              <form method="POST" action=""enctype="multipart/form-data">
                   {{form.hidden_tag()}}
                   <div class="form-group">
                   {{form.username.label}}{{form.username}}

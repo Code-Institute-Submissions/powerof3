@@ -33,7 +33,7 @@ class UpdateUserForm(FlaskForm):
 
     email = StringField('Email',validators=[DataRequired(),Email()])
     username = StringField('Username',validators=[DataRequired()])
-    profile_image = FileField('Update profile picture',validators=[FileAllowed(['jpg','png','jpeg'])])
+    profile_image = FileField('Update profile picture',validators=[FileAllowed(['jpg','png','jpeg','svg'])])
     short_story = TextAreaField('My Short story',validators=[DataRequired(),Length(max=200)])
     submit = SubmitField('Update')
 
