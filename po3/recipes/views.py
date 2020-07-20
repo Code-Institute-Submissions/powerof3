@@ -30,8 +30,6 @@ def create_recipe():
     
     return render_template('add_recipe.html',form=form)
 
-# Read it
-
 @recipe_cards.route('/<int:recipe_card_id>')
 def recipe_card(recipe_post_id):
     recipe_card = Recipe.query.get_or_404(recipe_card_id)
@@ -39,7 +37,6 @@ def recipe_card(recipe_post_id):
                             date=recipe_card.date,recipe=recipe_card
     )
 
-# Edit
 
 @recipe_card.route('/<int:recipe_card_id/edit',methods=['GET','POST'])
 @login_required
@@ -65,7 +62,7 @@ def edit(recipe_card_id):
         flash('Recipe Card updated')
         return redirect(url_for('recipe_cards.recipe_card',recipe_card_id=recipe_card.id))
     
-    elif request.method = "GET":
+    elif request.method = 'GET':
         form.title.data = recipe_card.title
         form.description.data = recipe_card.description
         form.ingriedient1.data = recipe_card.ingriedient1
@@ -76,5 +73,16 @@ def edit(recipe_card_id):
     return render_template('add_recipe.html',title='Editing',form=form)
 
 
+@recipe_card.route('/<int:recipe_card_id/delete',methods=['GET','POST'])
+@login_required
+def delete_recipe(recipe_card_id):
+    recipe_card = Recipe.query.get_or_404(recipe_card_id)
+    if recipe_card.chef != current_user:
+        abort(403)
 
-# Delete
+    db.session.delete(recipe_card)
+    db.session.commit()
+    flash('Recipe deleted')
+    return redirect(url_for('recipe_cards.recipe_card'))
+
+
