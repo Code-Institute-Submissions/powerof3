@@ -5,11 +5,10 @@
     --mainBlack: #242424;
     --mainBlue: #32B1CD;
     --mainPink: #D14398;
-    --mainFont: 'Roboto';
     --mainWhite: #FAFAFA;
-    --mainFont: 'Ubuntu';
-    --secondFont: 'Arial';
-
+    --mainGrey: #3D4849;
+    --mainFont: 'Roboto';
+    --secondFont: 'Ubuntu';
 }
 
 html {
@@ -133,6 +132,23 @@ a[data-toggle="collapse"] {
 .scale-on-hover:hover {
     transform: scale(1.1); 
 }
+/***********************************
+*** ABOUT **************************
+***********************************/
+.block-heading_title {
+    color: var(--mainBlack);
+    font-family: var(--mainFont);
+}
+.block-heading_text {
+    color: var(--mainGrey);
+    font-family: var(--secondFont);
+    line-height: 2rem;
+    letter-spacing: 0.1em;
+}
+.icons {
+    font-size: 3rem;
+}
+
 
 /***********************************
 *** MEDIAQUERIES *******************
@@ -149,4 +165,5 @@ a[data-toggle="collapse"] {
         display: none;
     }
 }
-
+  
+  

@@ -1,4 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="container justify-content-center clean-block about-us">
+        <div class="block-heading text-center pt-5">
+            <h2 class="block-heading_title text-uppercase">our story</h2>
+            <p class="block-heading_text">Our story began in 2019 when we noticed that smoothies became a great part of our morning routines. We were looking for inspiration in all kinds of blogs, websites, video channels, etc. bookmarking everything. After a while, there were so many recipes, bookmarks that it was hard to find anything. You know that feeling when you are thinking about that wonderful recipe which you tried yesterday and loved it but forgot where you found it. So this feeling inspired us to create Kiwiilab, a sharing platform, that all your favorite recipes could be stored in one place.
+
+                We love smoothies and all the benefits that come with drinking them, we like mixing and blending different flavors. We enjoy experimenting with colors, tastes, and textures and encourage you to try it as well. We hope that you will enjoy being part of our community.
+                
+                Let’s get creative and start blending your vitamines!</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6 col-lg-4">
+                <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="{{url_for('static',filename='img/founder.jpg')}}" />
+                    <div class="card-body info">
+                        <h4 class="card-title">Rimvydas Česonis </h4>
+                        <p class="card-text">Main chef and founder of po3.</p>
+                        <div class="icons"><a href="https://www.facebook.com/rimvydas.cesonis" target="_blank"><i class="lab la-facebook"></i></a><a href="https://www.instagram.com/rimvydascesonis/" target="_blank"><i class="lab la-instagram"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

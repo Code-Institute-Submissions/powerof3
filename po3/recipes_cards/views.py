@@ -2,13 +2,13 @@ from flask import render_template,url_for,flash,request,redirect,Blueprint,abort
 from flask_login import current_user,login_required
 from po3 import db
 from po3.models import Recipe
-from po3.recipes.forms import RecipeForm
+from po3.recipes_cards.forms import RecipeForm
 
 recipe_cards = Blueprint('recipe_cards',__name__)
 
 # Create recipe card
 
-@recipe_cards.route('create',methods=['GET','POST'])
+@recipe_cards.route('/add_recipe',methods=['GET','POST'])
 @login_required
 def create_recipe():
     form = RecipeForm()
@@ -30,6 +30,8 @@ def create_recipe():
     
     return render_template('add_recipe.html',form=form)
 
+# View recipe
+
 @recipe_cards.route('/<int:recipe_card_id>')
 def recipe_card(recipe_post_id):
     recipe_card = Recipe.query.get_or_404(recipe_card_id)
@@ -37,10 +39,11 @@ def recipe_card(recipe_post_id):
                             date=recipe_card.date,recipe=recipe_card
     )
 
+# Edit recipe
 
-@recipe_card.route('/<int:recipe_card_id/edit',methods=['GET','POST'])
+@recipe_cards.route("/<int:recipe_card_id>/edit_recipe",methods=['GET','POST'])
 @login_required
-def edit(recipe_card_id):
+def edit_recipe(recipe_card_id):
     recipe_card = Recipe.query.get_or_404(recipe_card_id)
 
     if recipe_card.chef != current_user:
@@ -62,7 +65,7 @@ def edit(recipe_card_id):
         flash('Recipe Card updated')
         return redirect(url_for('recipe_cards.recipe_card',recipe_card_id=recipe_card.id))
     
-    elif request.method = 'GET':
+    elif request.method == 'GET':
         form.title.data = recipe_card.title
         form.description.data = recipe_card.description
         form.ingriedient1.data = recipe_card.ingriedient1
@@ -70,10 +73,10 @@ def edit(recipe_card_id):
         form.ingriedient3.data = recipe_card.ingriedient3
         form.smoothie_image.data = recipe_card.smoothie_image
 
-    return render_template('add_recipe.html',title='Editing',form=form)
+    return render_template('edit_recipe.html',title='Editing',form=form)
 
 
-@recipe_card.route('/<int:recipe_card_id/delete',methods=['GET','POST'])
+@recipe_cards.route('/<int:recipe_card_id>/delete_recipe',methods=['GET','POST'])
 @login_required
 def delete_recipe(recipe_card_id):
     recipe_card = Recipe.query.get_or_404(recipe_card_id)
