@@ -2,7 +2,7 @@ from flask import render_template,url_for,flash,request,redirect,Blueprint,abort
 from flask_login import current_user,login_required
 from po3 import db
 from po3.models import Recipe
-from po3.recipes_cards.forms import RecipeForm
+from po3.recipe_cards.forms import RecipeForm
 
 recipe_cards = Blueprint('recipe_cards',__name__)
 
@@ -10,7 +10,7 @@ recipe_cards = Blueprint('recipe_cards',__name__)
 
 @recipe_cards.route('/add_recipe',methods=['GET','POST'])
 @login_required
-def create_recipe():
+def add_recipe():
     form = RecipeForm()
 
     if form.validate_on_submit():
@@ -73,7 +73,7 @@ def edit_recipe(recipe_card_id):
         form.ingriedient3.data = recipe_card.ingriedient3
         form.smoothie_image.data = recipe_card.smoothie_image
 
-    return render_template('edit_recipe.html',title='Editing',form=form)
+    return render_template('add_recipe.html',title='Editing',form=form)
 
 
 @recipe_cards.route('/<int:recipe_card_id>/delete_recipe',methods=['GET','POST'])

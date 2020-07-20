@@ -39,22 +39,12 @@
                     <a class="text-uppercase" href="{{url_for('core.about')}}">about</a>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-uppercase">recipe</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a class="text-uppercase" href="#">browse</a>
-                        </li>
-                        {% if current_user.is_authenticated %}
-                        <li>
-                            <a class="text-uppercase" href="#">add/delete</a>
-                        </li>
-                        <li>
-                            <a class="text-uppercase" href="#">edit</a>
-                        </li>
-                    </ul>
+                    <a class="text-uppercase" href="#">browse</a>
                 </li>
+                    
+                {% if current_user.is_authenticated %}
                 <li>
-                    <a class="text-uppercase" href="#">profile</a>
+                    <a class="text-uppercase" href="{{url_for('recipe_cards.add_recipe')}}">add</a>
                 </li>
                 {% endif %}
                 <li>
@@ -90,7 +80,7 @@
             </ul>         
         </div>
         {% block content %}
-        
+
         {% endblock %}
     </div>
    
