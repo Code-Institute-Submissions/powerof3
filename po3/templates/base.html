@@ -15,7 +15,7 @@
 <body>
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar" class="active">
+        <nav id="sidebar"> <!-- class="active" for unexpanded sidebar-->
             <div class="sidebar-header">
                 <img src="{{ url_for('static',filename='img/logo.svg') }}">
             </div>
@@ -50,21 +50,6 @@
                 <li>
                     <a class="text-uppercase" href="{{url_for('core.contact')}}">contact</a>
                 </li>
-            </ul>
-        </nav>
-
-        <!-- Page Content  -->
-        <div id="recipes">
-
-            <nav class="navbar navbar-expand navbar-light bg-light">
-                <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn">
-                        <i class="las la-bars"></i>
-                    </button>
-                </div>
-            </nav>
-
-            <ul class="nav justify-content-center">
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{url_for('users.logout')}}">Log out</a>
@@ -77,11 +62,23 @@
                     <a class="nav-link" href="{{url_for('users.login')}}">Login</a>
                 </li>
                 {% endif %}
-            </ul>         
-        </div>
-        {% block content %}
+            </ul>
+        </nav>
 
-        {% endblock %}
+        <!-- Page Content  -->
+        <div id="recipes">
+
+            <nav class="navbar navbar-expand bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="las la-bars"></i>
+                    </button>
+                </div>
+            </nav>
+            {% block content %}
+
+            {% endblock %}  
+        </div>
     </div>
    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
