@@ -52,13 +52,13 @@ class Recipe(db.Model):
     ingriedient1 = db.Column(db.String(16),nullable=False)
     ingriedient2 = db.Column(db.String(16),nullable=False)
     ingriedient3 = db.Column(db.String(16),nullable=False)
-    smoothie_image = db.Column(db.String(128),nullable=False)
+    smoothie_video = db.Column(db.String(128),nullable=False)
     
     def __init__(self,title,description,smoothie_image,ingriedient1,
     ingriedient2,ingriedient3,user_id):
         self.title = title
         self.description = description
-        self.smoothie_image = smoothie_image
+        self.smoothie_video = smoothie_video
         self.ingriedient1 = ingriedient1
         self.ingriedient2 = ingriedient2
         self.ingriedient3 = ingriedient3

@@ -20,7 +20,7 @@ def add_recipe():
                             ingriedient1=form.ingriedient1.data,
                             ingriedient2=form.ingriedient2.data,
                             ingriedient3=form.ingriedient3.data,
-                            smoothie_image=form.smoothie_image.data,
+                            smoothie_video=form.smoothie_video.data,
                             user_id=current_user.id)
 
         db.session.add(recipe_card)
@@ -58,7 +58,7 @@ def edit_recipe(recipe_card_id):
         recipe_card.ingriedient1 = form.ingriedient1.data
         recipe_card.ingriedient2 = form.ingriedient2.data
         recipe_card.ingriedient3 = form.ingriedient3.data
-        recipe_card.smoothie_image = form.smoothie_image.data
+        recipe_card.smoothie_video = form.smoothie_video.data
         recipe_card.user_id = current_user.id
 
         db.session.commit()
@@ -71,7 +71,7 @@ def edit_recipe(recipe_card_id):
         form.ingriedient1.data = recipe_card.ingriedient1
         form.ingriedient2.data = recipe_card.ingriedient2
         form.ingriedient3.data = recipe_card.ingriedient3
-        form.smoothie_image.data = recipe_card.smoothie_image
+        form.smoothie_image.video = recipe_card.smoothie_video
 
     return render_template('add_recipe.html',title='Editing',form=form)
 
