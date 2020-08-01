@@ -54,7 +54,7 @@ class Recipe(db.Model):
     ingriedient3 = db.Column(db.String(16),nullable=False)
     smoothie_video = db.Column(db.String(128),nullable=False)
     
-    def __init__(self,title,description,smoothie_image,ingriedient1,
+    def __init__(self,title,description,smoothie_video,ingriedient1,
     ingriedient2,ingriedient3,user_id):
         self.title = title
         self.description = description

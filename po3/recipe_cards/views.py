@@ -33,7 +33,7 @@ def add_recipe():
 # View recipe
 
 @recipe_cards.route('/<int:recipe_card_id>')
-def recipe_card(recipe_post_id):
+def recipe_card(recipe_card_id):
     recipe_card = Recipe.query.get_or_404(recipe_card_id)
     return render_template('recipe_card.html',title=recipe_card.title,
                             date=recipe_card.date,recipe=recipe_card

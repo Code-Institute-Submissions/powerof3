@@ -13,23 +13,27 @@
 
   <div class="album py-5 bg-light">
     <div class="container">
-
       <div class="row">
+        {% for recipe in recipe_cards.items %}
+      <!--Single recipe-->
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <iframe width="100%" height="225" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <iframe width="100%" height="225" src="{{recipe.smoothie_video}}"></iframe>
             <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <h5 class="card-title">{{recipe.title}}</h5>
+              <p class="card-text">{{recipe.description|truncate(50)}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{url_for('recipe_cards.recipe_card', recipe_card_id=recipe.id)}}">Read More</a></button>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <small class="text-muted">Made by: <a href="{{url_for('users.user_recipes')}}">{{recipe.chef.first_name}}</a></small>
+                <small class="text-muted">{{recipe.date.strftime('%d-%m-%Y')}}</small>
               </div>
             </div>
           </div>
         </div>
+      <!-- End of single recipe-->
+        {% endfor %}
       </div>
     </div>
   </div>
