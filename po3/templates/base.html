@@ -39,7 +39,7 @@
                     <a class="text-uppercase" href="{{url_for('core.about')}}">about</a>
                 </li>
                 <li>
-                    <a class="text-uppercase" href="#">browse</a>
+                    <a class="text-uppercase" href="{{url_for('core.all_recipes')}}">browse</a>
                 </li>
                     
                 {% if current_user.is_authenticated %}

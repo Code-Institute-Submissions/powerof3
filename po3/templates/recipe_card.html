@@ -1,3 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
+<!-- <div class="col-md-6">
+    <div class="card mb-4 shadow-sm">
+      <iframe width="100%" height="480" src="{{recipe.smoothie_video}}"></iframe>
+      <div class="card-body">
+        <h5 class="card-title">{{recipe.title}}</h5>
+        <p class="card-text">{{recipe.description|truncate(50)}}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{url_for('recipe_cards.recipe_card',recipe_card_id=recipe.id)}}">Read More</a></button>
+          </div>
+          <small class="text-muted">Made by: <a href="{{url_for('users.user_recipes',username=recipe.chef.username)}}">{{recipe.chef.first_name}}</a></small>
+          <small class="text-muted">{{recipe.date.strftime('%d-%m-%Y')}}</small>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <section class="jumbotron justify-content-center text-center">
+    <div class="container">
+      <h1>Welcome to our smoothies labaratory</h1>
+      <p class="lead text-muted">Gather, create and share all your favourite smoothie recipes in one place</p>
+      <p>
+        <a href="{{url_for('users.register')}}" class="btn btn-primary my-2">JOIN OUR COMMUNITY</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+  <div class="card" style="width: 18rem;">
+    <iframe width="100%" height="225" src="{{recipe.smoothie_video}}"></iframe>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 {% endblock %}
