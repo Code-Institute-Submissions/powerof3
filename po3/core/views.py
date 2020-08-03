@@ -17,3 +17,9 @@ def about():
 @core.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@core.route('/all_recipes.html')
+def all_recipes():
+    page = None
+    recipe_cards = Recipe.query.order_by(Recipe.date.desc()).paginate(page=page,per_page=3)
+    return render_template('all_recipes.html',recipe_cards=recipe_cards)
