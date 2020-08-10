@@ -71,7 +71,7 @@ def edit_recipe(recipe_card_id):
         form.ingriedient1.data = recipe_card.ingriedient1
         form.ingriedient2.data = recipe_card.ingriedient2
         form.ingriedient3.data = recipe_card.ingriedient3
-        form.smoothie_image.video = recipe_card.smoothie_video
+        form.smoothie_video.data = recipe_card.smoothie_video
 
     return render_template('add_recipe.html',title='Editing',form=form)
 
@@ -86,6 +86,6 @@ def delete_recipe(recipe_card_id):
     db.session.delete(recipe_card)
     db.session.commit()
     flash('Recipe deleted')
-    return redirect(url_for('recipe_cards.recipe_card'))
+    return redirect(url_for('core.index'))
 
 
