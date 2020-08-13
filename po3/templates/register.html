@@ -1,27 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
-<form method="POST">
-        {{form.hidden_tag()}}<br>
-    <div class="form-group">
-        {{form.first_name.label}}{{form.first_name}}<br>
+<section class="jumbotron justify-content-center text-center">
+    <div class="container">
+        <h1 class="pb-5">Welcome to our smoothies labaratory</h1>
+        <form method="POST">
+                {{form.hidden_tag()}}
+            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                <div class="form-group">
+                    {{form.username(class_="form-control",placeholder="Enter your username")}}
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                <div class="form-group">
+                    {{form.first_name(class_="form-control",placeholder="Enter your first name")}}
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                <div class="form-group">
+                    {{form.last_name(class_="form-control",placeholder="Enter your last name")}}
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                <div class="form-group">
+                    {{form.email(class_="form-control",placeholder="Enter email")}}
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                <div class="form-group">
+                    {{form.password(type_="password",placeholder="Password",class_="form-control")}}
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                <div class="form-group">
+                    {{form.password_confirm(type_="password",placeholder="Repeat password",class_="form-control")}}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-link pt-5">
+                {{form.submit()}}
+            </button>
+          </form>        
     </div>
-    <div class="form-group">
-        {{form.last_name.label}}{{form.last_name}}<br>
-    </div>
-    <div class="form-group">
-        {{form.email.label}}{{form.email}}<br>
-    </div>
-    <div class="form-group">
-        {{form.username.label}}{{form.username}}<br>
-    </div>
-    <div class="form-group">
-        {{form.password.label}}{{form.password}}<br>
-    </div>
-    <div class="form-group">
-        {{form.password_confirm.label}}{{form.password_confirm}}<br>
-    </div>
-    <button type="submit" class="btn btn-primary">
-    {{form.submit()}}
-    </button>
-</form>
+  </section>
 {% endblock %}
