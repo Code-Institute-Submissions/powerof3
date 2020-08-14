@@ -15,6 +15,21 @@ html {
     height: 100vh;
 }
 
+.join-btn {
+    background-color: var(--mainPink);
+    border-radius: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 35px;
+    text-decoration: none;
+    color: var(--mainWhite);
+
+/* or 139% */
+letter-spacing: 1px;
+}
+
 /* Navbar */
 body {
     font-family: 'Arial';
@@ -125,6 +140,33 @@ a[data-toggle="collapse"] {
 }
 
 /***********************************
+*** LANDING PAGE *******************
+***********************************/
+.front-heading {
+    font-family: var(--mainFont);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 4vw;
+}
+
+.front-heading_small {
+    font-family: var(--mainFont);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2vw;
+}
+
+.intersection {
+    height: 400px;
+    width: 100%;
+    background-image: url('/static/img/ananas.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/***********************************
 *** RECIPE CARD ********************
 ***********************************/
 
@@ -135,6 +177,9 @@ a[data-toggle="collapse"] {
 .scale-on-hover:hover {
     transform: scale(1.1); 
 }
+.ul_marked {
+    list-style-image: url('/static/img/list_marker.png');
+  }
 /***********************************
 *** ABOUT **************************
 ***********************************/
