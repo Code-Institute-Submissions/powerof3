@@ -13,6 +13,9 @@
 <div class="intersection"></div>
   <div class="album py-5 bg-light">
     <div class="container">
+      <div class="row justify-content-center">
+        <h3 class="text-uppercase my-5 latest">latest recipes</h3>
+      </div>
       <div class="row">
         {% for recipe in recipe_cards.items %}
       <!--Single recipe-->
@@ -37,4 +40,30 @@
       </div>
     </div>
   </div>
+<section>
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6 col-md-4 mx-auto">
+        <img class="smoothie_photo img-fluid" src="{{url_for('static', filename='img/smoothie_photo.png')}}" alt="">
+      </div>
+      <div class="col-lg-6 col-md-4 mx-auto text-center">
+        <h4 class="text-uppercase pt-3">some facts why smoothies <br> are good for you</h4>
+        <h5 class="text-uppercase pt-5">prevents dehydration</h5>
+        <p class="pt-2">Water is the most abundant thing both on earth and in your body.
+          About 70 percent of your body is water. Having smoothies along
+          with breakfast is a great way to replenish the loss of water
+          in your body during the summer.</p>
+        <h5 class="text-uppercase pt-5">enhances immunity</h5>
+        <p class="pt-2">Immunity refers to the ability of your body to fight against pathogens
+          and diseases. This natural potential becomes degenerated due to several
+          reasons. Interestingly, having smoothies made of ingredients that include
+          nutrients like beta-carotene helps boost your immune system.</p>
+        <h5 class="text-uppercase pt-5">improves skin</h5>
+        <p class="pt-2">As you may know, food containing carotenoids, like mango and pumpkin,
+          are highly beneficial for skin and complexion. Therefore, smoothies that
+          contain these ingredients help you keep glowing in the summer.</p>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
