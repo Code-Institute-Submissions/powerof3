@@ -14,10 +14,6 @@ def index():
 def about():
     return render_template('about.html')
 
-@core.route('/contact')
-def contact():
-    return render_template('contact.html')
-
 @core.route('/all_recipes.html')
 def all_recipes():
     page = request.args.get('page',1,type=int)

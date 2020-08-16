@@ -66,3 +66,4 @@ class Recipe(db.Model):
     
     def __repr__(self):
         return f"Post ID: {self.id}" #for debugging
+

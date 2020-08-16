@@ -1,40 +1,55 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container">
-            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
-                <div class="form-group">
-                    {{form.title(class_="form-control",placeholder="Enter your recipe title")}}
+
+    <section class="jumbotron justify-content-center text-center">
+        <div class="container">
+        <h1>Welcome to our smoothies labaratory</h1>
+        <p class="lead text-muted">Gather, create and share all your favourite smoothie recipes in one place</p>
+        <p>
+            <a href="{{url_for('users.register')}}" class="btn join-btn my-2">JOIN OUR COMMUNITY</a>
+        </p>
+        </div>
+    </section>
+    <section class="jumbotron justify-content-center text-center">
+        <div class="container">
+            <h1 class="pb-5">Welcome to our smoothies labaratory</h1>
+            <form method="POST">
+                    {{form.hidden_tag()}}
+                <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                    <div class="form-group">
+                        {{form.title(class_="form-control",placeholder="Enter your recipe title")}}
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
-                <div class="form-group">
-                    {{form.ingriedient1(class_="form-control",placeholder="What is the first ingriedient?")}}
+                <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                    <div class="form-group">
+                        {{form.ingriedient1(class_="form-control",placeholder="What is the first ingriedient?")}}
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
-                <div class="form-group">
-                    {{form.ingriedient2(class_="form-control",placeholder="What is the second ingriedient?")}}
+                <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                    <div class="form-group">
+                        {{form.ingriedient2(class_="form-control",placeholder="What is the second ingriedient?")}}
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
-                <div class="form-group">
-                    {{form.ingriedient3(class_="form-control",placeholder="What is the special ingriedient?")}}
+                <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                    <div class="form-group">
+                        {{form.ingriedient3(class_="form-control",placeholder="What is the special ingriedient?")}}
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
-                <div class="form-group">
-                    {{form.description(class_="form-control",placeholder="What is the special process in creating magic?")}}
+                <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                    <div class="form-group">
+                        {{form.description(class_="form-control",placeholder="What is the special process in creating magic?")}}
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
-                <div class="form-group">
-                    {{form.smoothie_video(class_="form-control",placeholder="Enter smoothie youtube video")}}
-                    <small class="form-text text-muted">Enter embed link example: "https://www.youtube.com/embed/xcJtL7QggTI"  </small>
+                <div class="col-sm-3 col-md-6 col-lg-4 mx-auto">
+                    <div class="form-group">
+                        {{form.smoothie_video(class_="form-control",placeholder="Enter smoothie youtube video")}}
+                        <small class="form-text text-muted">Enter embed link example: "https://www.youtube.com/embed/xcJtL7QggTI"  </small>
+                    </div>
                 </div>
-            </div>
-            <button type="submit" class="btn btn-link pt-5">
-                {{form.submit()}}
-            </button>
-        </form>
-    </div>
+                <button type="submit" class="btn btn-link pt-5">
+                    {{form.submit()}}
+                </button>
+              </form>        
+        </div>
+      </section>
 {% endblock %}
