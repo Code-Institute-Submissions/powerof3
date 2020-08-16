@@ -177,7 +177,7 @@ a[data-toggle="collapse"] {
 .scale-on-hover:hover {
     transform: scale(1.1); 
 }
-.ul_marked {
+.list-group-flush {
     list-style-image: url('/static/img/list_marker.png');
   }
 /***********************************

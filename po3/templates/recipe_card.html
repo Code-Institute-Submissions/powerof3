@@ -17,9 +17,9 @@
       <p class="card-text">{{recipe.description}}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item ul_marked">{{recipe.ingriedient1}}</li>
-      <li class="list-group-item ul_marked">{{recipe.ingriedient2}}</li>
-      <li class="list-group-item ul_marked">{{recipe.ingriedient3}}</li>
+      <li class="list-group-item">{{recipe.ingriedient1}}</li>
+      <li class="list-group-item">{{recipe.ingriedient2}}</li>
+      <li class="list-group-item">{{recipe.ingriedient3}}</li>
     </ul>
     {% if recipe.chef == current_user %}
     <div class="card-body">
