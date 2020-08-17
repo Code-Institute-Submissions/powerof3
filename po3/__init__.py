@@ -62,7 +62,7 @@ mail_settings = {
     'MAIL_USE_SSL' : True,
     #'MAIL_DEBUG' : True,
     'MAIL_USERNAME' : 'powof333@gmail.com',
-    'MAIL_PASSWORD' : 'ricksongracie',
+    'MAIL_PASSWORD' : 'kronkron',
     'MAIL_DEFAULT_SENDER' : 'powerof333@yahoo.com',
     'MAIL_MAX_EMAILS' : None,
     'MAIL_SUPPRESS_SEND' : False,
