@@ -25,7 +25,13 @@ html {
     line-height: 35px;
     text-decoration: none;
     color: var(--mainWhite);
-
+}
+.all_recipe-btn {
+    background-color: var(--mainBlue);   
+}
+.view-recipe-btn:hover {
+    background-color: var(--mainBlue);
+}
 /* or 139% */
 letter-spacing: 1px;
 }
@@ -174,6 +180,9 @@ a[data-toggle="collapse"] {
    height: auto;
 }
 
+.author-color {
+    color: var(--mainPink)
+}
 /***********************************
 *** RECIPE CARD ********************
 ***********************************/
@@ -185,9 +194,6 @@ a[data-toggle="collapse"] {
 .scale-on-hover:hover {
     transform: scale(1.1); 
 }
-.list-group-flush {
-    list-style-image: url('/static/img/list_marker.png');
-  }
 /***********************************
 *** ABOUT **************************
 ***********************************/
@@ -205,6 +211,19 @@ a[data-toggle="collapse"] {
     font-size: 3rem;
 }
 
+/***********************************
+*** LOGIN **************************
+***********************************/
+
+.login-background {
+    height:100vh;
+    width: 100vw;
+    background-image: url('/static/img/login-pic.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+}
 
 /***********************************
 *** MEDIAQUERIES *******************

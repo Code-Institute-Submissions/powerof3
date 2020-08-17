@@ -27,9 +27,9 @@
               <p class="card-text">{{recipe.description|truncate(50)}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{url_for('recipe_cards.recipe_card',recipe_card_id=recipe.id)}}">Read More</a></button>
+                  <button type="button" class="btn join-btn view-recipe-btn"><a href="{{url_for('recipe_cards.recipe_card',recipe_card_id=recipe.id)}}">View Recipe</a></button>
                 </div>
-                <small class="text-muted">Made by: <a href="{{url_for('users.user_recipes',username=recipe.chef.username)}}">{{recipe.chef.first_name}}</a></small>
+                <small class="text-muted">Made by: <a class="author-color" href="{{url_for('users.user_recipes',username=recipe.chef.username)}}">{{recipe.chef.first_name}}</a></small>
                 <small class="text-muted">{{recipe.date.strftime('%d-%m-%Y')}}</small>
               </div>
             </div>
@@ -38,6 +38,13 @@
       <!-- End of single recipe-->
         {% endfor %}
       </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <p class="pb-5">
+        <a href="{{url_for('core.all_recipes')}}" class="btn join-btn all_recipe-btn text-uppercase">more recipes</a>
+      </p>
     </div>
   </div>
 <section>
